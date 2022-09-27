@@ -12,3 +12,63 @@ body {
   font-family: 'Poppins', sans-serif;
 	font-size: 1.5rem;
 }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 100px;
+  grid-area: header;
+  background-color: #ac3b61;
+}
+
+.logo {
+  font-size: 4.768rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style-type: none;
+  align-items: center;
+}
+
+#login {
+  font-size: 1.953rem;
+  color: #fff;
+}
+
+#new-book {
+  background-color: #123c69;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  width: auto;
+  height: auto;
+  font-weight: 700;
+  font-size: 1.953rem;
+}
+
+#new-book:hover {
+  background-color: #edc7b7;
+  color: #123c69;
+  transition: 0.7s ease;
+}
+
+.container {
+  display: grid;
+  grid-template: 100px repeat(3, 2fr) 50px / 100px 1fr 100px; 
+  grid-template-areas: 
+    "header header header"
+    ". shelve-one ."
+    ". shelve-two ."
+    ". shelve-three ."
+    ". footer .";
+  width: 100vw;
+  height: 100vh;
+  background-color: #eee2dc;
+}

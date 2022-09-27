@@ -67,8 +67,30 @@ nav ul {
     ". shelve-one ."
     ". shelve-two ."
     ". shelve-three ."
-    ". footer .";
+    "footer footer footer";
   width: 100vw;
   height: 100vh;
   background-color: #eee2dc;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #edc7b7;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ac3b61;
+}
+
+footer a:hover {
+  color: #123c69;
+}
+
+.copyright {
+  color: #123c69;
+  font-size: 1.563rem;
 }

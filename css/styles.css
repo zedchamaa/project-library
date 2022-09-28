@@ -18,14 +18,8 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 50px 100px;
-  grid-area: header;
+  height: 150px;
   background-color: #ac3b61;
-}
-
-.logo {
-  font-size: 4.768rem;
-  font-weight: 600;
-  color: #fff;
 }
 
 nav ul {
@@ -35,9 +29,112 @@ nav ul {
   align-items: center;
 }
 
-#login {
-  font-size: 1.953rem;
+button {
+  width: 150px;
+  height: auto;
+  font-size: 1.563rem;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px 0;
+  cursor: pointer;
+  color: #123c69;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+footer {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #edc7b7;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: #ac3b61;
+}
+
+footer a:hover {
+  color: #123c69;
+}
+
+.logo {
+  font-size: 4.768rem;
+  font-weight: 600;
   color: #fff;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+  background-color: #eee2dc;
+}
+
+.shelves {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  width: 90%;
+  height: auto;
+  padding: 40px 30px;
+  margin-bottom: 60px;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 250px;
+  min-height: 300px;
+  height: 300px;
+  background-color: #bab2b5;
+  visibility: visible;
+  font-size: 2.441rem;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.book-title .book-author {
+  word-wrap: normal;
+}
+
+.book-title {
+  font-weight: 700;
+  color: #ac3b61;
+  font-size: 1.953rem;
+}
+
+.book-author {
+  font-style: italic;
+  color: #123c69;
+  font-size: 1.563rem;
+}
+
+.number-of-pages {
+  font-size: 1.563rem;
+  color: #fff;
+}
+
+.buttons {
+  text-align: center;
+}
+
+.copyright {
+  color: #123c69;
+  font-size: 1.563rem;
 }
 
 #new-book {
@@ -59,38 +156,29 @@ nav ul {
   transition: 0.7s ease;
 }
 
-.container {
-  display: grid;
-  grid-template: 100px repeat(3, 2fr) 50px / 100px 1fr 100px; 
-  grid-template-areas: 
-    "header header header"
-    ". shelve-one ."
-    ". shelve-two ."
-    ". shelve-three ."
-    "footer footer footer";
-  width: 100vw;
-  height: 100vh;
-  background-color: #eee2dc;
+#not-read:hover {
+  background-color: #123c69;
+  color: #fff;
+  transition: 0.7s ease;
 }
 
-footer {
-  grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #edc7b7;
+#remove:hover {
+  background-color: #ac3b61;
+  color: #fff;
+  transition: 0.7s ease;
 }
 
-footer a {
-  text-decoration: none;
-  color: #ac3b61;
-}
+/* For smaller screens */
 
-footer a:hover {
-  color: #123c69;
-}
-
-.copyright {
-  color: #123c69;
-  font-size: 1.563rem;
+@media screen and (max-width: 659px) {
+  header {
+    flex-direction: column;
+    padding: 20px 100px;
+    gap: 20px;
+    height: auto;
+    min-width: 385px;
+  }
+  .shelves {
+    justify-content: center;
+  }
 }

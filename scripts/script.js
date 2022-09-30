@@ -15,3 +15,14 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+// Add book to library
+function addBookToLibrary() {
+  let i = 0;
+  const newBook = new Book(title, author, pages);
+  myLibrary.push(newBook)[i];
+  i++;
+  console.log(myLibrary);
+}
+
+addBookToLibrary();

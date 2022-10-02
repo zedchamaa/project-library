@@ -27,15 +27,25 @@ function addBookToLibrary(title, author, pages) {
   saveToLocalStorage(myLibrary);
 }
 
-retrieveBookFromLocalStorage();
-
 // Save library to local storage
 function saveToLocalStorage(myLibrary) {
-  localStorage.setItem('books', JSON.stringify(myLibrary));
+  localStorage.setItem('library', JSON.stringify(myLibrary));
+  pushBooksToCard(myLibrary);
 }
 
-// Get book from local storage
-function retrieveBookFromLocalStorage() {
-  const book = JSON.parse(localStorage.getItem('books'));
-  console.log(book.title);
+// Push books to book card
+function pushBooksToCard(myLibrary) {
+  const bookTitle = document.querySelector('.book-title');
+  const bookAuthor = document.querySelector('.book-author');
+  const bookPages = document.querySelector('.number-of-pages');
+
+  for (let i = 0; i < myLibrary.length; i++) {
+    // you should create a new card at this stage to push the items to it
+    bookTitle.innerHTML = myLibrary[i].title;
+    bookAuthor.innerHTML = myLibrary[i].author;
+    bookPages.innerHTML = myLibrary[i].pages;
+  }
 }
+
+
+

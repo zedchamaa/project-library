@@ -19,3 +19,10 @@ newBookButton.addEventListener('click', () => {
   addBookToLibrary(title, author, pages);
   createBookCard(myLibrary);
 })
+
+// Create a new book based on user input
+function Book(title, author, pages) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+}

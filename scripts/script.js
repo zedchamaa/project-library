@@ -26,3 +26,10 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+// Add new book to library
+function addBookToLibrary(title, author, pages) {
+  const newBook = new Book(title, author, pages);
+  myLibrary.push(newBook);
+  saveToLocalStorage(myLibrary);
+}

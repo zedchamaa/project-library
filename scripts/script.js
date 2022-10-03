@@ -33,3 +33,8 @@ function addBookToLibrary(title, author, pages) {
   myLibrary.push(newBook);
   saveToLocalStorage(myLibrary);
 }
+
+// Save library to local storage
+function saveToLocalStorage(myLibrary) {
+  localStorage.setItem('library', JSON.stringify(myLibrary));
+}

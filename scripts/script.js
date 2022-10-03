@@ -38,3 +38,54 @@ function addBookToLibrary(title, author, pages) {
 function saveToLocalStorage(myLibrary) {
   localStorage.setItem('library', JSON.stringify(myLibrary));
 }
+
+// Create a book card and update its user interface
+function createBookCard(myLibrary) {  
+
+  // target the shelves div
+  const shelves = document.querySelector('.shelves');
+
+  // add a div element with a class book-card under shelves
+  const bookCard = document.createElement('div');
+  bookCard.classList.add('book-card');
+  bookCard.setAttribute('id', id);
+  shelves.appendChild(bookCard);
+
+  // add a div element with a class book-title under book-card
+  const bookTitle = document.createElement('div');
+  bookTitle.classList.add('book-title');
+  document.getElementById(id).appendChild(bookTitle);
+  bookTitle.innerHTML = myLibrary[bookIndex].title;
+
+  // add a div element with a class book-author under book-card
+  const bookAuthor = document.createElement('div');
+  bookAuthor.classList.add('book-author');
+  document.getElementById(id).appendChild(bookAuthor);
+  bookAuthor.innerHTML = myLibrary[bookIndex].author;
+
+  // add a div element with a class book-pages under book-card
+  const bookPages = document.createElement('div');
+  bookPages.classList.add('book-pages');
+  document.getElementById(id).appendChild(bookPages);
+  bookPages.innerHTML = myLibrary[bookIndex].pages;
+
+  // add a div element with a class buttons under book-card
+  const cardButtons = document.createElement('div');
+  cardButtons.classList.add('buttons');
+  document.getElementById(id).appendChild(cardButtons);
+
+  // add a button with an id not-read and text Mark as read under buttons
+  const notReadButton = document.createElement('button');
+  notReadButton.setAttribute('id','not-read');
+  notReadButton.innerText = 'Mark as read';
+  document.getElementById(id).appendChild(notReadButton);
+
+  // add a button with an id remove and text Remove under buttons
+  const removeButton = document.createElement('button');
+  removeButton.setAttribute('id','remove');
+  removeButton.innerText = 'Remove';
+  document.getElementById(id).appendChild(removeButton);
+
+  id++; 
+  bookIndex++;
+}

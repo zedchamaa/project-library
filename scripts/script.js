@@ -41,51 +41,73 @@ function saveToLocalStorage(myLibrary) {
 
 // Create a book card and update its user interface
 function createBookCard(myLibrary) {  
+  addBookCardDiv();
+  addBookTitleDiv();
+  addBookAuthorDiv();
+  addBookPagesDiv();
+  addButtonsDiv();
+  addNotReadButton();
+  addRemoveButton();
 
+  // increment the id and bookIndex numbers
+  id++; 
+  bookIndex++;
+}
+
+// Add a div element with a class book-card under shelves
+function addBookCardDiv() {
   // target the shelves div
   const shelves = document.querySelector('.shelves');
 
-  // add a div element with a class book-card under shelves
   const bookCard = document.createElement('div');
   bookCard.classList.add('book-card');
   bookCard.setAttribute('id', id);
   shelves.appendChild(bookCard);
+}
 
-  // add a div element with a class book-title under book-card
+// Add a div element with a class book-title under book-card
+function addBookTitleDiv() {
   const bookTitle = document.createElement('div');
   bookTitle.classList.add('book-title');
   document.getElementById(id).appendChild(bookTitle);
   bookTitle.innerHTML = myLibrary[bookIndex].title;
+}
 
-  // add a div element with a class book-author under book-card
+// Add a div element with a class book-author under book-card
+function addBookAuthorDiv() {
   const bookAuthor = document.createElement('div');
   bookAuthor.classList.add('book-author');
   document.getElementById(id).appendChild(bookAuthor);
   bookAuthor.innerHTML = myLibrary[bookIndex].author;
+}
 
-  // add a div element with a class book-pages under book-card
+// Add a div element with a class book-pages under book-card
+function addBookPagesDiv() {
   const bookPages = document.createElement('div');
   bookPages.classList.add('book-pages');
   document.getElementById(id).appendChild(bookPages);
   bookPages.innerHTML = myLibrary[bookIndex].pages;
+}
 
-  // add a div element with a class buttons under book-card
+// Add a div element with a class buttons under book-card
+function addButtonsDiv() {
   const cardButtons = document.createElement('div');
   cardButtons.classList.add('buttons');
   document.getElementById(id).appendChild(cardButtons);
+}
 
-  // add a button with an id not-read and text Mark as read under buttons
+// Add a button with an id not-read and text Mark as read under buttons
+function addNotReadButton() {
   const notReadButton = document.createElement('button');
   notReadButton.setAttribute('id','not-read');
   notReadButton.innerText = 'Mark as read';
   document.getElementById(id).appendChild(notReadButton);
+}
 
-  // add a button with an id remove and text Remove under buttons
+// Add a button with an id remove and text Remove under buttons
+function addRemoveButton() {
   const removeButton = document.createElement('button');
   removeButton.setAttribute('id','remove');
   removeButton.innerText = 'Remove';
   document.getElementById(id).appendChild(removeButton);
-
-  id++; 
-  bookIndex++;
 }

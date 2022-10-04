@@ -45,7 +45,6 @@ function createBookCard(myLibrary) {
   addBookTitleDiv();
   addBookAuthorDiv();
   addBookPagesDiv();
-  addButtonsDiv();
   addNotReadButton();
   addRemoveButton();
 
@@ -89,25 +88,10 @@ function addBookPagesDiv() {
   bookPages.innerHTML = myLibrary[bookIndex].pages;
 }
 
-// Add a div element with a class buttons under book-card
-function addButtonsDiv() {
-  const cardButtons = document.createElement('div');
-  cardButtons.classList.add('buttons');
-  document.getElementById(id).appendChild(cardButtons);
-}
-
-// Add a button with an id not-read and text Mark as read under buttons
+// Add a button with a class not-read and text Mark as read under buttons
 function addNotReadButton() {
   const notReadButton = document.createElement('button');
-  notReadButton.setAttribute('id','not-read');
+  notReadButton.classList.add('not-read');
   notReadButton.innerText = 'Mark as read';
   document.getElementById(id).appendChild(notReadButton);
-}
-
-// Add a button with an id remove and text Remove under buttons
-function addRemoveButton() {
-  const removeButton = document.createElement('button');
-  removeButton.setAttribute('id','remove');
-  removeButton.innerText = 'Remove';
-  document.getElementById(id).appendChild(removeButton);
 }

@@ -52,8 +52,8 @@ function createBookCard() {
   bookIndex++;
 }
 
-// Generate a random unique ID per book-card
-const uniqueID = function generateRandomUniqueID() {
+// Generate a unique ID per book card
+const uniqueID = function generateUniqueID() {
   let id = new Date().getTime();
   return id;
 }

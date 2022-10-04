@@ -137,6 +137,18 @@ footer a:hover {
   font-size: 1.563rem;
 }
 
+.not-read:hover {
+  background-color: #123c69;
+  color: #fff;
+  transition: 0.7s ease;
+}
+
+.remove:hover {
+  background-color: #ac3b61;
+  color: #fff;
+  transition: 0.7s ease;
+}
+
 #new-book {
   background-color: #123c69;
   color: #fff;
@@ -153,18 +165,6 @@ footer a:hover {
 #new-book:hover {
   background-color: #edc7b7;
   color: #123c69;
-  transition: 0.7s ease;
-}
-
-.not-read:hover {
-  background-color: #123c69;
-  color: #fff;
-  transition: 0.7s ease;
-}
-
-#remove:hover {
-  background-color: #ac3b61;
-  color: #fff;
   transition: 0.7s ease;
 }
 

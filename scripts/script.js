@@ -95,3 +95,11 @@ function addNotReadButton() {
   notReadButton.innerText = 'Mark as read';
   document.getElementById(id).appendChild(notReadButton);
 }
+
+// Add a button with a class remove and text Remove under buttons
+function addRemoveButton() {
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('remove');
+  removeButton.innerText = 'Remove';
+  document.getElementById(id).appendChild(removeButton);
+}

@@ -5,7 +5,7 @@
 const myLibrary = [];
 
 // Store the unique ids of each book card div
-let id = 0;
+let id;
 
 // Store the index of each book in the library
 let bookIndex = 0;
@@ -40,7 +40,7 @@ function saveToLocalStorage(myLibrary) {
 }
 
 // Create a book card and update its user interface
-function createBookCard(myLibrary) {  
+function createBookCard() {  
   addBookCardDiv();
   addBookTitleDiv();
   addBookAuthorDiv();
@@ -48,17 +48,22 @@ function createBookCard(myLibrary) {
   addNotReadButton();
   addRemoveButton();
 
-  // increment the id and bookIndex numbers
-  id++; 
+  // increment the bookIndex numbers
   bookIndex++;
+}
+
+// Generate a random unique ID per book-card
+const uniqueID = function generateRandomUniqueID() {
+  let id = new Date().getTime();
+  return id;
 }
 
 // Add a div element with a class book-card under shelves
 function addBookCardDiv() {
   // target the shelves div
   const shelves = document.querySelector('.shelves');
-
   const bookCard = document.createElement('div');
+  id = uniqueID();
   bookCard.classList.add('book-card');
   bookCard.setAttribute('id', id);
   shelves.appendChild(bookCard);

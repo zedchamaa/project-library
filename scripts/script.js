@@ -19,7 +19,7 @@ newBookButton.addEventListener('click', () => {
   const title = window.prompt('Enter book title');
   const author = window.prompt('Enter book author');
   const pages = window.prompt('Enter book pages');
-  addBookToLibrary(title, author, pages);
+  addBookToLibrary(title, author, pages, cardUniqueID);
   createBookCard(myLibrary);
 })
 
@@ -118,6 +118,12 @@ function findBookCardID() {
   const parent = document.querySelector('.shelves');
   const children = Number(parent.children[index].id);
   index++;
-  console.log(children);
-  return children;
+  pushCardIdToLibrary(children);
+}
+
+// Push the book card ID to the books library
+function pushCardIdToLibrary(children) {
+  const firstBook = myLibrary[bookIndex];
+  firstBook.id = children;
+  saveToLocalStorage(myLibrary);
 }

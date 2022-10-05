@@ -5,10 +5,13 @@
 const myLibrary = [];
 
 // Store the unique ids of each book card div
-let id;
+let cardUniqueID;
 
 // Store the index of each book in the library
 let bookIndex = 0;
+
+// Store the index of each newly created book
+let index = 0;
 
 // Get user input
 const newBookButton = document.getElementById('new-book');
@@ -42,6 +45,7 @@ function saveToLocalStorage(myLibrary) {
 // Create a book card and update its user interface
 function createBookCard() {  
   addBookCardDiv();
+  findBookCardID();
   addBookTitleDiv();
   addBookAuthorDiv();
   addBookPagesDiv();
@@ -63,9 +67,9 @@ function addBookCardDiv() {
   // target the shelves div
   const shelves = document.querySelector('.shelves');
   const bookCard = document.createElement('div');
-  id = uniqueID();
+  cardUniqueID = uniqueID();
   bookCard.classList.add('book-card');
-  bookCard.setAttribute('id', id);
+  bookCard.setAttribute('id', cardUniqueID);
   shelves.appendChild(bookCard);
 }
 
@@ -73,7 +77,7 @@ function addBookCardDiv() {
 function addBookTitleDiv() {
   const bookTitle = document.createElement('div');
   bookTitle.classList.add('book-title');
-  document.getElementById(id).appendChild(bookTitle);
+  document.getElementById(cardUniqueID).appendChild(bookTitle);
   bookTitle.innerHTML = myLibrary[bookIndex].title;
 }
 
@@ -81,7 +85,7 @@ function addBookTitleDiv() {
 function addBookAuthorDiv() {
   const bookAuthor = document.createElement('div');
   bookAuthor.classList.add('book-author');
-  document.getElementById(id).appendChild(bookAuthor);
+  document.getElementById(cardUniqueID).appendChild(bookAuthor);
   bookAuthor.innerHTML = myLibrary[bookIndex].author;
 }
 
@@ -89,7 +93,7 @@ function addBookAuthorDiv() {
 function addBookPagesDiv() {
   const bookPages = document.createElement('div');
   bookPages.classList.add('book-pages');
-  document.getElementById(id).appendChild(bookPages);
+  document.getElementById(cardUniqueID).appendChild(bookPages);
   bookPages.innerHTML = myLibrary[bookIndex].pages;
 }
 
@@ -98,7 +102,7 @@ function addNotReadButton() {
   const notReadButton = document.createElement('button');
   notReadButton.classList.add('not-read');
   notReadButton.innerText = 'Mark as read';
-  document.getElementById(id).appendChild(notReadButton);
+  document.getElementById(cardUniqueID).appendChild(notReadButton);
 }
 
 // Add a button with a class remove and text Remove under buttons
@@ -106,5 +110,14 @@ function addRemoveButton() {
   const removeButton = document.createElement('button');
   removeButton.classList.add('remove');
   removeButton.innerText = 'Remove';
-  document.getElementById(id).appendChild(removeButton);
+  document.getElementById(cardUniqueID).appendChild(removeButton);
+}
+
+// Find the ID of a newly created book card
+function findBookCardID() {
+  const parent = document.querySelector('.shelves');
+  const children = Number(parent.children[index].id);
+  index++;
+  console.log(children);
+  return children;
 }

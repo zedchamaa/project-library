@@ -1,3 +1,28 @@
+/* CSS Global Variables */
+
+:root {
+  /* Main Sections */
+  --header-background-color: #ac3b61;
+  --container-background-color: #eee2dc; 
+  --footer-background-color: #edc7b7;
+
+  /* Logo */
+  --logo-color: #fff;
+  --logo-font-size: 4.768rem;
+  --logo-font-weight: 600;
+
+  /* Cards & Books */
+  --card-background-color: #bab2b5;
+  --book-title-color: #ac3b61;
+  --book-title-font-size: 1.953rem;
+  --book-title-font-weight: 700;
+  --book-author-color: #123c69;
+  --book-author-font-size: 1.563rem;
+  --book-author-font-style: italic;
+  --book-pages-color: #fff;
+  --book-pages-font-size: 1.563rem;
+}
+
 /* Basic Styles */
 
 * {
@@ -19,7 +44,7 @@ body {
 
 header {
   align-items: center;
-  background-color: #ac3b61;
+  background-color: var(--header-background-color);
   display: flex;
   height: 150px;
   justify-content: space-between;
@@ -27,9 +52,9 @@ header {
 }
 
 .logo {
-  color: #fff;
-  font-size: 4.768rem;
-  font-weight: 600;
+  color: var(--logo-color);
+  font-size: var(--logo-font-size);
+  font-weight: var(--logo-font-weight);
 }
 
 /* Navigation */
@@ -49,7 +74,7 @@ main {
 }
 
 .container {
-  background-color: #eee2dc;
+  background-color: var(--container-background-color);
   min-height: 100vh;
   position: relative;
 }
@@ -69,7 +94,7 @@ main {
 
 .book-card {
   align-items: center;
-  background-color: #bab2b5;
+  background-color: var(--card-background-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -88,20 +113,20 @@ main {
 }
 
 .book-title {
-  color: #ac3b61;
-  font-size: 1.953rem;
-  font-weight: 700;
+  color: var(--book-title-color);
+  font-size: var(--book-title-font-size);
+  font-weight: var(--book-title-font-weight);
 }
 
 .book-author {
-  color: #123c69;
-  font-size: 1.563rem;
-  font-style: italic;
+  color: var(--book-author-color);
+  font-size: var(--book-author-font-size);
+  font-style: var(--book-author-font-style);
 }
 
 .book-pages {
-  color: #fff;
-  font-size: 1.563rem;
+  color: var(--book-pages-color);
+  font-size: var(--book-pages-font-size);
 }
 
 .not-read:hover {
@@ -129,12 +154,6 @@ main {
   width: auto;
 }
 
-#new-book:hover {
-  background-color: #edc7b7;
-  color: #123c69;
-  transition: 0.7s ease;
-}
-
 /* Buttons */
 
 button {
@@ -153,12 +172,18 @@ button {
   text-align: center;
 }
 
+#new-book:hover {
+  background-color: #edc7b7;
+  color: #123c69;
+  transition: 0.7s ease;
+}
+
 /* Footer */
 
 footer {
 	display: flex;
   align-items: center;
-  background-color: #edc7b7;
+  background-color: var(--footer-background-color);
   bottom: 0;
   gap: 10px;
   justify-content: center;

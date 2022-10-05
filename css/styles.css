@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 html {
@@ -9,36 +9,36 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
 	font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 50px 100px;
-  height: 150px;
   background-color: #ac3b61;
+  display: flex;
+  height: 150px;
+  justify-content: space-between;
+  padding: 50px 100px;
 }
 
 nav ul {
+  align-items: center;
   display: flex;
   gap: 30px;
   list-style-type: none;
-  align-items: center;
 }
 
 button {
-  width: 150px;
-  height: auto;
-  font-size: 1.563rem;
-  padding: 10px;
   border-radius: 5px;
   border: none;
-  margin: 5px 0;
-  cursor: pointer;
   color: #123c69;
+  cursor: pointer;
+  font-size: 1.563rem;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  width: 150px;
 }
 
 main {
@@ -49,19 +49,19 @@ main {
 footer {
 	display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
   background-color: #edc7b7;
-  position: absolute;
   bottom: 0;
+  gap: 10px;
+  justify-content: center;
   left: 0;
-  width: 100%;
   padding: 20px 0;
+  position: absolute;
+  width: 100%;
 }
 
 footer a {
-  text-decoration: none;
   color: #ac3b61;
+  text-decoration: none;
 }
 
 footer a:hover {
@@ -69,42 +69,42 @@ footer a:hover {
 }
 
 .logo {
+  color: #fff;
   font-size: 4.768rem;
   font-weight: 600;
-  color: #fff;
 }
 
 .container {
-  position: relative;
-  min-height: 100vh;
   background-color: #eee2dc;
+  min-height: 100vh;
+  position: relative;
 }
 
 .shelves {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   gap: 20px;
-  width: 90%;
   height: auto;
-  padding: 40px 30px;
+  justify-content: space-between;
   margin-bottom: 60px;
+  padding: 40px 30px;
+  width: 90%;
 }
 
 .book-card {
+  align-items: center;
+  background-color: #bab2b5;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  width: 250px;
-  min-height: 300px;
-  height: 300px;
-  background-color: #bab2b5;
-  visibility: visible;
   font-size: 2.441rem;
-  border-radius: 10px;
+  gap: 10px;
+  height: 300px;
+  justify-content: space-between;
+  min-height: 300px;
   padding: 20px;
+  visibility: visible;
+  width: 250px;
 }
 
 .book-title .book-author {
@@ -112,20 +112,20 @@ footer a:hover {
 }
 
 .book-title {
-  font-weight: 700;
   color: #ac3b61;
   font-size: 1.953rem;
+  font-weight: 700;
 }
 
 .book-author {
-  font-style: italic;
   color: #123c69;
   font-size: 1.563rem;
+  font-style: italic;
 }
 
 .book-pages {
-  font-size: 1.563rem;
   color: #fff;
+  font-size: 1.563rem;
 }
 
 .buttons {
@@ -151,15 +151,15 @@ footer a:hover {
 
 #new-book {
   background-color: #123c69;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
   border-radius: 10px;
-  width: auto;
-  height: auto;
-  font-weight: 700;
+  border: none;
+  color: #fff;
+  cursor: pointer;
   font-size: 1.953rem;
+  font-weight: 700;
+  height: auto;
+  padding: 10px 20px;
+  width: auto;
 }
 
 #new-book:hover {
@@ -173,10 +173,10 @@ footer a:hover {
 @media screen and (max-width: 659px) {
   header {
     flex-direction: column;
-    padding: 20px 100px;
     gap: 20px;
     height: auto;
     min-width: 385px;
+    padding: 20px 100px;
   }
   .shelves {
     justify-content: center;

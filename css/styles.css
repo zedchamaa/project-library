@@ -1,3 +1,5 @@
+/* Basic Styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +15,8 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+/* Header */
+
 header {
   align-items: center;
   background-color: #ac3b61;
@@ -22,6 +26,14 @@ header {
   padding: 50px 100px;
 }
 
+.logo {
+  color: #fff;
+  font-size: 4.768rem;
+  font-weight: 600;
+}
+
+/* Navigation */
+
 nav ul {
   align-items: center;
   display: flex;
@@ -29,49 +41,11 @@ nav ul {
   list-style-type: none;
 }
 
-button {
-  border-radius: 5px;
-  border: none;
-  color: #123c69;
-  cursor: pointer;
-  font-size: 1.563rem;
-  height: auto;
-  margin: 5px 0;
-  padding: 10px;
-  width: 150px;
-}
+/* Main */
 
 main {
   display: flex;
   justify-content: center;
-}
-
-footer {
-	display: flex;
-  align-items: center;
-  background-color: #edc7b7;
-  bottom: 0;
-  gap: 10px;
-  justify-content: center;
-  left: 0;
-  padding: 20px 0;
-  position: absolute;
-  width: 100%;
-}
-
-footer a {
-  color: #ac3b61;
-  text-decoration: none;
-}
-
-footer a:hover {
-  color: #123c69;
-}
-
-.logo {
-  color: #fff;
-  font-size: 4.768rem;
-  font-weight: 600;
 }
 
 .container {
@@ -90,6 +64,8 @@ footer a:hover {
   padding: 40px 30px;
   width: 90%;
 }
+
+/* Book Cards */
 
 .book-card {
   align-items: center;
@@ -128,15 +104,6 @@ footer a:hover {
   font-size: 1.563rem;
 }
 
-.buttons {
-  text-align: center;
-}
-
-.copyright {
-  color: #123c69;
-  font-size: 1.563rem;
-}
-
 .not-read:hover {
   background-color: #123c69;
   color: #fff;
@@ -168,9 +135,57 @@ footer a:hover {
   transition: 0.7s ease;
 }
 
+/* Buttons */
+
+button {
+  border-radius: 5px;
+  border: none;
+  color: #123c69;
+  cursor: pointer;
+  font-size: 1.563rem;
+  height: auto;
+  margin: 5px 0;
+  padding: 10px;
+  width: 150px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+/* Footer */
+
+footer {
+	display: flex;
+  align-items: center;
+  background-color: #edc7b7;
+  bottom: 0;
+  gap: 10px;
+  justify-content: center;
+  left: 0;
+  padding: 20px 0;
+  position: absolute;
+  width: 100%;
+}
+
+footer a {
+  color: #ac3b61;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #123c69;
+}
+
+.copyright {
+  color: #123c69;
+  font-size: 1.563rem;
+}
+
 /* For smaller screens */
 
 @media screen and (max-width: 659px) {
+  /* Header */
   header {
     flex-direction: column;
     gap: 20px;
@@ -178,6 +193,7 @@ footer a:hover {
     min-width: 385px;
     padding: 20px 100px;
   }
+  /* Main */
   .shelves {
     justify-content: center;
   }

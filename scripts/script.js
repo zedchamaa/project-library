@@ -51,7 +51,7 @@ function createBookCard() {
   addBookPagesDiv();
   addNotReadButton();
   addRemoveButton();
-  findBookCardID();
+  findClickedRemoveCardID();
 
   // increment the bookIndex numbers
   bookIndex++;
@@ -122,15 +122,15 @@ function findBookCardID() {
   pushCardIdToLibrary(children);
 }
 
-// Push the book card ID to the books library
+// Push the book card ID to the books library and local storage
 function pushCardIdToLibrary(children) {
   const firstBook = myLibrary[bookIndex];
   firstBook.id = children;
   saveToLocalStorage(myLibrary);
 }
 
-// Find the ID of the clicked book card
-function findBookCardID() {
+// Find the book card ID of the clicked remove button
+function findClickedRemoveCardID() {
   const buttons = document.getElementsByClassName('remove');
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', (element) => {

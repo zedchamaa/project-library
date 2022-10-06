@@ -19,8 +19,8 @@ newBookButton.addEventListener('click', () => {
   const title = window.prompt('Enter book title');
   const author = window.prompt('Enter book author');
   const pages = window.prompt('Enter book pages');
-  addBookToLibrary(title, author, pages, cardUniqueID);
-  createBookCard(myLibrary);
+  addBookToLibrary(title, author, pages);
+  createBookCard();
 })
 
 // Create a new book based on user input
@@ -42,23 +42,15 @@ function saveToLocalStorage(myLibrary) {
   localStorage.setItem('library', JSON.stringify(myLibrary));
 }
 
-// Create a book card and update its user interface
-function createBookCard() {  
-  addBookCardDiv();
-  findBookCardID();
-  // increment the bookIndex numbers
-  bookIndex++;
-}
-
 // Generate a unique ID per book card
 const uniqueID = function generateUniqueID() {
   let id = new Date().getTime();
   return id;
 }
 
-// Add a div element with a class book-card under shelves
-function addBookCardDiv() {
-  // target the shelves div
+// Create a book card and update its user interface
+function createBookCard() {
+  // add a div element with a class book-card under shelves
   const shelves = document.querySelector('.shelves');
   const bookCard = document.createElement('div');
   cardUniqueID = uniqueID();
@@ -67,6 +59,8 @@ function addBookCardDiv() {
   bookCard.setAttribute('id', cardUniqueID);
   shelves.appendChild(bookCard);
   addBookTitleDiv();
+  // increment the bookIndex numbers
+  bookIndex++;
 }
 
 // Add a div element with a class book-title under book-card
@@ -95,6 +89,7 @@ function addBookPagesDiv() {
   bookPages.innerHTML = myLibrary[bookIndex].pages;
   addNotReadButton();
   addRemoveButton();
+  findBookCardID();
 }
 
 // Add a button with a class not-read and text Mark as read under buttons
@@ -129,14 +124,14 @@ function pushCardIdToLibrary(children) {
 }
 
 // Find the book card ID of the clicked remove button
-  const findBookId = bookId => {
-    console.log(bookId);
-    removeBookCard(bookId);
-  };
+const findBookId = bookId => {
+  console.log(bookId); // TODO: delete this line
+  removeBookCard(bookId); // FIXME: function not working properly
+};
   
-  document.querySelector('.shelves').addEventListener('click', e => {
-    const btn = e.target.closest('button');
-    if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
-    const bookId = btn.closest('.book-card').dataset.id;
-    if(btn.classList.contains('remove')) findBookId(bookId);
-  }, {passive: true});
+document.querySelector('.shelves').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
+  const bookId = btn.closest('.book-card').dataset.id;
+  if(btn.classList.contains('remove')) findBookId(bookId);
+}, {passive: true});

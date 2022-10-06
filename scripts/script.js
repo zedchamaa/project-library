@@ -51,7 +51,6 @@ function createBookCard() {
   addBookPagesDiv();
   addNotReadButton();
   addRemoveButton();
-  findClickedRemoveCardID();
 
   // increment the bookIndex numbers
   bookIndex++;
@@ -70,6 +69,7 @@ function addBookCardDiv() {
   const bookCard = document.createElement('div');
   cardUniqueID = uniqueID();
   bookCard.classList.add('book-card');
+  bookCard.dataset.id = cardUniqueID;
   bookCard.setAttribute('id', cardUniqueID);
   shelves.appendChild(bookCard);
 }
@@ -130,13 +130,14 @@ function pushCardIdToLibrary(children) {
 }
 
 // Find the book card ID of the clicked remove button
-function findClickedRemoveCardID() {
-  const buttons = document.getElementsByClassName('remove');
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', (element) => {
-      // find the id value of the clicked card
-      document.querySelector('book-card');
-      const clickedCardID = Number(element.target.parentNode.id);
-    });
-  }
-}
+  const findBookId = bookId => {
+    console.log(bookId);
+    // rest of your code;
+  };
+  
+  document.querySelector('.shelves').addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
+    const bookId = btn.closest('.book-card').dataset.id;
+    if(btn.classList.contains('remove')) findBookId(bookId);
+  }, {passive: true});

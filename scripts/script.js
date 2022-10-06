@@ -46,12 +46,6 @@ function saveToLocalStorage(myLibrary) {
 function createBookCard() {  
   addBookCardDiv();
   findBookCardID();
-  addBookTitleDiv();
-  addBookAuthorDiv();
-  addBookPagesDiv();
-  addNotReadButton();
-  addRemoveButton();
-
   // increment the bookIndex numbers
   bookIndex++;
 }
@@ -72,6 +66,7 @@ function addBookCardDiv() {
   bookCard.dataset.id = cardUniqueID;
   bookCard.setAttribute('id', cardUniqueID);
   shelves.appendChild(bookCard);
+  addBookTitleDiv();
 }
 
 // Add a div element with a class book-title under book-card
@@ -80,6 +75,7 @@ function addBookTitleDiv() {
   bookTitle.classList.add('book-title');
   document.getElementById(cardUniqueID).appendChild(bookTitle);
   bookTitle.innerHTML = myLibrary[bookIndex].title;
+  addBookAuthorDiv();
 }
 
 // Add a div element with a class book-author under book-card
@@ -88,6 +84,7 @@ function addBookAuthorDiv() {
   bookAuthor.classList.add('book-author');
   document.getElementById(cardUniqueID).appendChild(bookAuthor);
   bookAuthor.innerHTML = myLibrary[bookIndex].author;
+  addBookPagesDiv();
 }
 
 // Add a div element with a class book-pages under book-card
@@ -96,6 +93,8 @@ function addBookPagesDiv() {
   bookPages.classList.add('book-pages');
   document.getElementById(cardUniqueID).appendChild(bookPages);
   bookPages.innerHTML = myLibrary[bookIndex].pages;
+  addNotReadButton();
+  addRemoveButton();
 }
 
 // Add a button with a class not-read and text Mark as read under buttons
@@ -132,7 +131,7 @@ function pushCardIdToLibrary(children) {
 // Find the book card ID of the clicked remove button
   const findBookId = bookId => {
     console.log(bookId);
-    // rest of your code;
+    removeBookCard(bookId);
   };
   
   document.querySelector('.shelves').addEventListener('click', e => {

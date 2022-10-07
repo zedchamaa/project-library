@@ -125,13 +125,24 @@ function pushCardIdToLibrary(children) {
 
 // Find the book card ID of the clicked remove button
 const findBookId = bookId => {
-  console.log(bookId); // TODO: delete this line
-  removeBookCard(bookId); // FIXME: function not working properly
+  removeBookCard(bookId); 
 };
   
 document.querySelector('.shelves').addEventListener('click', e => {
   const btn = e.target.closest('button');
   if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
-  const bookId = btn.closest('.book-card').dataset.id;
+  const bookId = Number(btn.closest('.book-card').dataset.id);
   if(btn.classList.contains('remove')) findBookId(bookId);
 }, {passive: true});
+
+// Remove a book card from the library and local storage
+function removeBookCard(bookId) {
+  // find the index of the book card to remove based on its ID
+  const indexOfCardToRemove = myLibrary.findIndex(({id}) => id === bookId);
+
+  // remove the book card from the array
+  myLibrary.splice(indexOfCardToRemove, 1);
+
+  // save the array back to local storage
+  saveToLocalStorage(myLibrary);
+}

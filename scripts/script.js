@@ -30,7 +30,8 @@ function addBookToLibrary(title, author, pages) {
   const newBook = new Book(title, author, pages);
   myLibrary.push(newBook);
   console.log(myLibrary); // TODO: remember to delete
-  displayBook(title, author, pages);
+  const bookId = newBook.id;
+  displayBook(title, author, pages, bookId);
   saveToLocalStorage(myLibrary);
 }
 
@@ -40,7 +41,7 @@ function saveToLocalStorage(myLibrary) {
 }
 
 // Create each book card and display on the web page
-function displayBook(title, author, pages) {
+function displayBook(title, author, pages, bookId) {
   // add a div element with a class book-card under shelves
   const shelves = document.querySelector('.shelves');
   const bookCard = document.createElement('div');
@@ -48,7 +49,7 @@ function displayBook(title, author, pages) {
   shelves.appendChild(bookCard);
 
   // add the book card unique id
-  // TODO: Continue from here
+  bookCard.setAttribute('id', bookId);
   
   // add a div element with class book-title under book-card
   // then push book title to it

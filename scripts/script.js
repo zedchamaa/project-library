@@ -11,3 +11,14 @@ function Book(title, author, pages) {
   this.author = author;
   this.pages = pages;
 }
+
+// Get user input
+function getUserInput() {
+  const newBookButton = document.getElementById('new-book');
+  newBookButton.addEventListener('click', () => {
+    const title = window.prompt('Enter book title');
+    const author = window.prompt('Enter book author');
+    const pages = window.prompt('Enter book pages');
+    addBookToLibrary(title, author, pages);
+  })
+}

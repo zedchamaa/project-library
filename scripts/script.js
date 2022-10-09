@@ -33,6 +33,7 @@ function addBookToLibrary(title, author, pages) {
   const bookId = newBook.id;
   displayBook(title, author, pages, bookId);
   saveToLocalStorage(myLibrary);
+  findClickedBookId(bookId);
 }
 
 // Save library to local storage
@@ -83,4 +84,14 @@ function displayBook(title, author, pages, bookId) {
   removeButton.classList.add('remove');
   bookCard.appendChild(removeButton);
   removeButton.innerText = 'Remove';
+}
+
+// Find the book card ID of the clicked remove button
+function findClickedBookId(bookId) {
+  document.querySelector('.shelves').addEventListener('click', e => {
+    const btn = e.target.closest('button');
+    if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
+    const cardId = Number(btn.closest('.book-card').id);
+    if(btn.classList.contains('remove') && bookId === cardId) removeBookCard(bookId);
+  }, {passive: true});
 }

@@ -72,6 +72,13 @@ function displayBook(title, author, pages, bookId) {
   bookCard.appendChild(bookPages);
   bookPages.innerText = pages;
 
+  // Add a button with a class not-read and text Mark as read under buttons
+  const notReadButton = document.createElement('button');
+  notReadButton.classList.add('not-read');
+  bookCard.appendChild(notReadButton);
+  notReadButton.innerText = 'Mark as read';
+
+
 
 
 

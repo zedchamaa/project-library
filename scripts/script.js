@@ -22,3 +22,14 @@ function getUserInput() {
     addBookToLibrary(title, author, pages);
   })
 }
+
+getUserInput();
+
+// Add book to library
+function addBookToLibrary(title, author, pages) {
+  const newBook = new Book(title, author, pages);
+  myLibrary.push(newBook);
+  console.log(myLibrary); // TODO: remember to delete
+  displayBook(title, author, pages);
+  saveToLocalStorage(myLibrary);
+}

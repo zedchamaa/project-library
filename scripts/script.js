@@ -78,12 +78,9 @@ function displayBook(title, author, pages, bookId) {
   bookCard.appendChild(notReadButton);
   notReadButton.innerText = 'Mark as read';
 
-
-
-
-
-
-
-
-  
+  // Add a button with a class remove and text Remove under buttons
+  const removeButton = document.createElement('button');
+  removeButton.classList.add('remove');
+  bookCard.appendChild(removeButton);
+  removeButton.innerText = 'Remove';
 }

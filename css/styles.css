@@ -135,6 +135,11 @@ main {
   transition: 0.7s ease;
 }
 
+.read {
+  background-color: #ac3b61;
+  color: #fff;
+}
+
 .remove:hover {
   background-color: #ac3b61;
   color: #fff;

@@ -111,4 +111,6 @@ function removeBookCard(bookId) {
 function removeBookCardFromUi(bookId) {
   const bookIdCard = document.getElementById(bookId);
   bookIdCard.remove();
+  // save the array back to local storage
+  saveToLocalStorage(myLibrary);
 }

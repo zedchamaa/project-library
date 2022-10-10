@@ -29,7 +29,6 @@ getUserInput();
 function addBookToLibrary(title, author, pages) {
   const newBook = new Book(title, author, pages);
   myLibrary.push(newBook);
-  console.log(myLibrary); // TODO: remember to delete
   const bookId = newBook.id;
   displayBook(title, author, pages, bookId);
   saveToLocalStorage(myLibrary);
@@ -94,4 +93,16 @@ function findClickedBookId(bookId) {
     const cardId = Number(btn.closest('.book-card').id);
     if(btn.classList.contains('remove') && bookId === cardId) removeBookCard(bookId);
   }, {passive: true});
+}
+
+// Remove a book card from the library and local storage
+function removeBookCard(bookId) {
+  // find the index of the book card to remove based on its ID
+  const indexOfCardToRemove = myLibrary.findIndex(({id}) => id === bookId);
+  // remove the book card from the array
+  myLibrary.splice(indexOfCardToRemove, 1);
+  // save the array back to local storage
+  saveToLocalStorage(myLibrary);
+  // Remove a book card from the user interface
+  removeBookCardFromUi(bookId);
 }

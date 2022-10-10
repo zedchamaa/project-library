@@ -106,3 +106,9 @@ function removeBookCard(bookId) {
   // Remove a book card from the user interface
   removeBookCardFromUi(bookId);
 }
+
+// Remove a book card from the user interface
+function removeBookCardFromUi(bookId) {
+  const bookIdCard = document.getElementById(bookId);
+  bookIdCard.remove();
+}

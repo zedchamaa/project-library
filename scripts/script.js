@@ -66,7 +66,7 @@ function displayBook(title, author, pages, bookId) {
   bookAuthor.innerText = author;
 
   // add a div element with class book-author under book-card
-  // then push book author to it
+  // then push book pages to it
   const bookPages = document.createElement('div');
   bookPages.classList.add('book-pages');
   bookCard.appendChild(bookPages);

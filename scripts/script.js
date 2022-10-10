@@ -6,7 +6,7 @@ let myLibrary = [];
 
 // Create a new book
 function Book(title, author, pages) {
-  this.id = myLibrary.length + 1;
+  this.id = Math.floor(Math.random(myLibrary.length) * 1000000) + 1;
   this.title = title;
   this.author = author;
   this.pages = pages;

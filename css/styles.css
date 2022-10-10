@@ -84,7 +84,6 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   height: auto;
-  justify-content: space-between;
   margin-bottom: 60px;
   padding: 40px 30px;
   width: 90%;

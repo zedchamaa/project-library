@@ -92,6 +92,7 @@ function findClickedBookId(bookId) {
     if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
     const cardId = Number(btn.closest('.book-card').id);
     if(btn.classList.contains('remove') && bookId === cardId) removeBookCard(bookId);
+    if(btn.classList.contains('not-read') && bookId === cardId) toggleReadButton(btn);
   }, {passive: true});
 }
 
@@ -113,4 +114,15 @@ function removeBookCardFromUi(bookId) {
   bookIdCard.remove();
   // save the array back to local storage
   saveToLocalStorage(myLibrary);
+}
+
+// Toggle the read button
+function toggleReadButton(btn) {
+  btn.classList.toggle('read');
+  console.log(btn.classList.value);
+  if (btn.classList.value === 'not-read read') {
+    btn.innerText = 'READ';
+  } else if (btn.classList.value === 'not-read') {
+    btn.innerText = 'Mark as read';
+  }
 }

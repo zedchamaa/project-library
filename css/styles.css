@@ -66,6 +66,77 @@ nav ul {
   list-style-type: none;
 }
 
+/* Hide Arrows From Input Number */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Popup */
+
+.popup {
+  background-color: var(--footer-background-color);
+  border-radius: 10px;
+  box-shadow: 0 0 30px grey;
+  height: 35rem;
+  margin: 50px auto;
+  padding: 2rem;
+  text-align: center;
+  width: 30rem;
+}
+
+.popup-display {
+  display: visible;
+}
+
+.popup-hide {
+  display: none;
+}
+
+.popup-heading {
+  color: var(--book-author-color);
+  font-size: 2rem;
+}
+
+.form-input {
+  border-radius: 5px;
+  border: none;
+  color: var(--book-title-color);
+  font-weight: 600;
+  margin: 1rem;
+  padding: 1rem;
+  width: 80%;
+}
+
+.form-input:focus {
+  border-color: var(--book-title-color);
+  box-shadow: 0 0 15px var(--book-title-color);
+  outline: none;
+  transition: 0.5s;
+}
+
+.submit {
+  background-color: var(--book-author-color);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.submit:hover {
+  background-color: var(--book-title-color);
+  color: #fff;
+  transition: 0.7s ease;
+}
+
 /* Main */
 
 main {

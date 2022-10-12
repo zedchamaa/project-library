@@ -7,6 +7,7 @@ let myLibrary = [];
 const newBookButton = document.getElementById('new-book');
 newBookButton.addEventListener('click', () => {
   displayForm();
+  hideBookShelves();
 })
 
 // Create a new book
@@ -31,6 +32,20 @@ function hideForm() {
   popup.classList.add('popup-hide');
 }
 
+// Hide the book shelves
+function hideBookShelves() {
+  const shelves = document.querySelector('.shelves');
+  shelves.classList.remove('shelves-display');
+  shelves.classList.add('shelves-hide');
+}
+
+// Display the book shelves
+function displayBookShelves() {
+  const shelves = document.querySelector('.shelves');
+  shelves.classList.remove('shelves-hide');
+  shelves.classList.add('shelves-display');
+}
+
 // Get user input
 function getUserInput() {
   const form = document.getElementById('form');
@@ -49,6 +64,8 @@ function getUserInput() {
     form.reset();
     // hide the form
     hideForm();
+    // display the book shelves
+    displayBookShelves();
   })
 }
 

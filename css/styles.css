@@ -160,6 +160,14 @@ main {
   width: 90%;
 }
 
+.shelves-display {
+  display: visible;
+}
+
+.shelves-hide {
+  display: none;
+}
+
 /* Book Cards */
 
 .book-card {

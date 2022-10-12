@@ -4,6 +4,11 @@
 // Store all books objects in an array
 let myLibrary = [];
 
+const newBookButton = document.getElementById('new-book');
+newBookButton.addEventListener('click', () => {
+  displayForm();
+})
+
 // Create a new book
 function Book(title, author, pages) {
   this.id = Math.floor(Math.random(myLibrary.length) * 1000000) + 1;
@@ -12,14 +17,38 @@ function Book(title, author, pages) {
   this.pages = pages;
 }
 
+// Display the Add New Book form
+function displayForm() {
+  const popup = document.querySelector('.popup');
+  popup.classList.remove('popup-hide');
+  popup.classList.add('popup-display');
+}
+
+// Hide the Add New Book form
+function hideForm() {
+  const popup = document.querySelector('.popup');
+  popup.classList.remove('popup-display');
+  popup.classList.add('popup-hide');
+}
+
 // Get user input
 function getUserInput() {
-  const newBookButton = document.getElementById('new-book');
-  newBookButton.addEventListener('click', () => {
-    const title = window.prompt('Enter book title');
-    const author = window.prompt('Enter book author');
-    const pages = window.prompt('Enter book pages');
+  const form = document.getElementById('form');
+  form.addEventListener('submit', function(event) {
+    // prevents form from auto submitting
+    event.preventDefault();
+    // get book title
+    const title = document.getElementById('title').value;
+    // get book author
+    const author = document.getElementById('author').value;
+    // get book pages
+    const pages = document.getElementById('pages').value;
+    // add the new book to the library
     addBookToLibrary(title, author, pages);
+    // reset form to clear all input fields
+    form.reset();
+    // hide the form
+    hideForm();
   })
 }
 

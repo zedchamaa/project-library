@@ -4,6 +4,8 @@
 
 <p>Click <a href="https://www.theodinproject.com/lessons/node-path-javascript-library" target="_blank">here</a> to view the full assignment on The Odin Project's website.</p>
 
+<p>You can view the completed project at <a href="https://library.zedchamaa.com/" target="_blank">https://library.zedchamaa.com/</a></p>
+
 <h1>Assignment</h1>
 
 <p><strong>1.</strong> If you haven’t already, set up your project with skeleton HTML/CSS and JS files.</p>

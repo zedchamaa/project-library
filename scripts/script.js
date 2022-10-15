@@ -10,6 +10,22 @@ newBookButton.addEventListener('click', () => {
   hideBookShelves();
 })
 
+// Get and display existing books on page refresh
+window.onload = function getStoredBooks() {
+  const existingBooks = localStorage.getItem('library');
+  // add the books to myLibrary
+  myLibrary = JSON.parse(existingBooks) || [];
+  // display each stored book on the front end
+  for (let book of myLibrary) {
+    const title = book.title;
+    const author = book.author;
+    const pages = book.pages;
+    const bookId = book.id;
+    displayBook(title, author, pages, bookId);
+    findClickedBookId(bookId);
+  }
+}
+
 // Create a new book
 function Book(title, author, pages) {
   this.id = Math.floor(Math.random(myLibrary.length) * 1000000) + 1;
@@ -166,7 +182,6 @@ function removeBookCardFromUi(bookId) {
 // Toggle the read button
 function toggleReadButton(btn) {
   btn.classList.toggle('read');
-  console.log(btn.classList.value);
   if (btn.classList.value === 'not-read read') {
     btn.innerText = 'READ';
   } else if (btn.classList.value === 'not-read') {

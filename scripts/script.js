@@ -155,7 +155,7 @@ function findClickedBookId(bookId) {
     if(!btn) return; // if it's not a `<button>` or a child of a button which was clicked, we're not interested
     const cardId = Number(btn.closest('.book-card').id);
     if(btn.classList.contains('remove') && bookId === cardId) removeBookCard(bookId);
-    if(btn.classList.contains('not-read') && bookId === cardId) toggleReadButton(btn);
+    if(btn.classList.contains('not-read') && bookId === cardId) toggleReadButton(btn, cardId);
   }, {passive: true});
 }
 
@@ -180,11 +180,19 @@ function removeBookCardFromUi(bookId) {
 }
 
 // Toggle the read button
-function toggleReadButton(btn) {
+function toggleReadButton(btn, cardId) {
   btn.classList.toggle('read');
-  if (btn.classList.value === 'not-read read') {
-    btn.innerText = 'READ';
-  } else if (btn.classList.value === 'not-read') {
-    btn.innerText = 'Mark as read';
+  for (let book of myLibrary) {
+   if (book.read === false && book.id === cardId) {
+      btn.classList.value = 'not-read read';
+      btn.innerText = 'READ';
+      book.read = true;
+      saveToLocalStorage(myLibrary);
+    } else if (book.read === true && book.id === cardId) {
+      btn.classList.value = 'not-read';
+      btn.innerText = 'Mark as read';
+      book.read = false;
+      saveToLocalStorage(myLibrary);
+    }
   }
 }

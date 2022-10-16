@@ -23,8 +23,20 @@ window.onload = function getStoredBooks() {
     const bookId = book.id;
     displayBook(title, author, pages, bookId);
     findClickedBookId(bookId);
+    updateReadStatus(bookId, readStatus);
   }
 }
+
+// Check book read status and update card accordingly
+function updateReadStatus(bookId, readStatus) {
+  const btn = document.getElementById(bookId).querySelector('.not-read');
+  for (let book of myLibrary) {
+    if (readStatus === true && book.id === bookId) {
+      btn.classList.value = 'not-read read';
+      btn.innerText = 'READ';
+    }
+  }
+} 
 
 // Create a new book
 function Book(title, author, pages) {

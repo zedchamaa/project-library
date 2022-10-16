@@ -207,6 +207,7 @@ main {
 .book-pages {
   color: var(--book-pages-color);
   font-size: var(--book-pages-font-size);
+  text-align: center;
 }
 
 .not-read:hover {

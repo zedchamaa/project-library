@@ -201,6 +201,7 @@ main {
   color: var(--book-author-color);
   font-size: var(--book-author-font-size);
   font-style: var(--book-author-font-style);
+  text-align: center;
 }
 
 .book-pages {

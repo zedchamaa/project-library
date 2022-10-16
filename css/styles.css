@@ -194,6 +194,7 @@ main {
   color: var(--book-title-color);
   font-size: var(--book-title-font-size);
   font-weight: var(--book-title-font-weight);
+  text-align: center;
 }
 
 .book-author {

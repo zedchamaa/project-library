@@ -21,6 +21,7 @@ window.onload = function getStoredBooks() {
     const author = book.author;
     const pages = book.pages;
     const bookId = book.id;
+    const readStatus = book.read;
     displayBook(title, author, pages, bookId);
     findClickedBookId(bookId);
     updateReadStatus(bookId, readStatus);
